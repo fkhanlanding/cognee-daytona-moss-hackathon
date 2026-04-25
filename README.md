@@ -19,6 +19,54 @@ starter skill
 
 Your final artifact is a skill that can keep getting better from run feedback.
 
+## How To Win
+
+You win by showing that your PR rescue skill improved.
+
+Judges want to see:
+
+1. Baseline agent failed or only partially succeeded.
+2. Feedback was recorded in Cognee as a `SkillRunEntry`.
+3. `SKILL.md` changed because of that feedback.
+4. The improved agent performed better on the next PR.
+
+Good submissions make the skill improvement easy to inspect. Do not just say
+"the agent learned". Show the before score, feedback, skill diff, and after
+score.
+
+## Example Improvement Loop
+
+Baseline failure:
+
+```text
+The agent reviewed a PR that changed graph writes.
+It missed that empty edge batches crashed relational upserts.
+```
+
+Recorded feedback:
+
+```text
+success_score = 0.3
+feedback = -0.8
+error_type = "missed_bug"
+error_message = "Agent did not test empty graph relationship batches."
+```
+
+Skill improvement:
+
+```text
+Added rule:
+"When reviewing storage or graph writes, verify empty input batches are no-ops."
+```
+
+Improved run:
+
+```text
+The agent reviewed a second PR touching graph writes.
+It checked empty node and edge batches, found the missing guard, and proposed
+the minimal no-op fix with a unit test.
+```
+
 ## What You Build
 
 Each team creates or improves a PR rescue skill pack:
@@ -125,6 +173,9 @@ Example roles:
 ## Submission
 
 Copy `templates/SUBMISSION.md` into your team folder or PR description and fill it out.
+
+See `examples/before-after-skill-diff.md` for a small example of a good
+self-improvement diff.
 
 Required evidence:
 
