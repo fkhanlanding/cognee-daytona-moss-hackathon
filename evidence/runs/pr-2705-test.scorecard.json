@@ -1,0 +1,62 @@
+{
+  "run_id": "team:practice-agentic-graphskills:pr-sentinel",
+  "selected_skill_id": "pr-sentinel",
+  "task_text": "Review and rescue https://github.com/topoteretes/cognee/pull/2705",
+  "result_summary": "Found that improve=True can trigger a global, non-idempotent skill improvement pass and identified missing end-to-end coverage for enrich/improve/agentic retrieval paths.",
+  "success_score": 0.78,
+  "feedback": 0.56,
+  "error_type": "missing_integration_test",
+  "error_message": "The PR has useful smoke coverage, but the side-effectful improve=True and agentic retrieval paths lack integration tests proving graph/vector consistency and scoped behavior.",
+  "last_attempt_at": "2026-04-25T23:42:20Z",
+  "scorecard": {
+    "pr_rescue_quality": 31,
+    "self_improvement_evidence": 15,
+    "review_clarity": 18,
+    "reproducibility": 9,
+    "safety": 5,
+    "total": 78
+  },
+  "review": {
+    "primary_finding": "remember_skill_run_entry(..., improve=True) triggers improve_failing_skills over the full node set while inspect_skill generates time-based inspection ids, so repeated low-scoring runs can create fresh inspections/amendments for the same failure pattern.",
+    "secondary_gaps": [
+      "AgenticRetriever._run_tool_safely does not catch ToolNotFoundError from execute_tool lookup.",
+      "Remote cloud remember does not run the local skill-source dispatch path before returning through client.remember.",
+      "Current tests do not cover enrich=True, improve=True, real graph/vector consistency, or agentic retriever plus SkillRun recording end-to-end."
+    ]
+  },
+  "verification": {
+    "checkout": "/tmp/cognee-pr-2705",
+    "base_ref": "origin/dev",
+    "head_ref": "pr-sentinel-pr-2705",
+    "probe_artifacts": [
+      "evidence/runs/pr-2705-test.probe.md",
+      "evidence/runs/pr-2705-test.probe.json"
+    ],
+    "commands": [
+      {
+        "command": "uv run --with pytest pytest cognee/tests/unit/modules/tools/test_skill_ingest.py -q",
+        "result": "21 passed, 8 warnings"
+      },
+      {
+        "command": "uv run --with pytest --with pytest-asyncio pytest cognee/tests/unit/modules/search/test_get_search_type_retriever_instance.py -q",
+        "result": "17 passed, 8 warnings"
+      }
+    ],
+    "notes": "The search factory target skipped all async tests when run with pytest alone; pytest-asyncio was required."
+  },
+  "moss": {
+    "collection": "pr-sentinel-failures",
+    "retrieved_memory_ids": [],
+    "stored_memory_ids": [],
+    "status": "no Moss retrieval or write observed for this local test run"
+  },
+  "cognee": {
+    "skill_run_entry_write_observed": false,
+    "status": "SkillRunEntry fields recorded locally; no Cognee write log observed"
+  },
+  "daytona": {
+    "workspace": "not observed for PR 2705 test run",
+    "cleanup_observed": false,
+    "status": "local isolated checkout only"
+  }
+}

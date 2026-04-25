@@ -61,6 +61,7 @@ For every changed workflow, ask:
 - What empty, missing, duplicate, or unauthorized input can reach this code?
 - Does this path write to graph, vector, relational, cache, or file storage?
 - If this changes environment-bound configuration, does a test prove the exact env var name and default fallback behavior?
+- If this starts automatic agent, retry, or self-improvement work, does a test prove the scope is bounded and repeated runs are idempotent?
 - Can a partial failure leave inconsistent state?
 - Are user, tenant, dataset, or permission checks preserved?
 - Does the test prove the changed behavior, or only the happy path?
@@ -93,6 +94,7 @@ Prefer targeted improvements:
 - "When graph writes include no relationships, verify empty edge batches are safe."
 - "When reviewing auth endpoints, require a signature verification check for decoded tokens."
 - "When a PR changes permissions, identify the user, tenant, dataset, and role boundary explicitly."
+- "When reviewing automatic improvement loops, require scoped execution and idempotent repeated-run behavior."
 
 Avoid vague improvements:
 

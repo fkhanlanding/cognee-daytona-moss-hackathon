@@ -1,0 +1,1146 @@
+{
+  "base_ref": "origin/dev",
+  "changed_files": [
+    {
+      "added_lines": 80,
+      "extension": ".yml",
+      "hunk_headers": [
+        "@@ -0,0 +1,80 @@"
+      ],
+      "is_test": false,
+      "path": ".github/workflows/build_skills_hackathon_image.yml",
+      "removed_lines": 0,
+      "risk_tags": [],
+      "status": "A",
+      "symbols": []
+    },
+    {
+      "added_lines": 161,
+      "extension": ".py",
+      "hunk_headers": [
+        "@@ -19,0 +20 @@ from cognee.memory import (",
+        "@@ -36,0 +38,14 @@ logger = get_logger(\"remember\")",
+        "@@ -50,0 +66,10 @@ class RememberKwargs(TypedDict, total=False):",
+        "@@ -153,0 +179,3 @@ async def _remember_entry(",
+        "@@ -167,0 +196,3 @@ async def _remember_entry(",
+        "@@ -186,0 +218,3 @@ async def _remember_entry(",
+        "@@ -195,0 +230,3 @@ async def _dispatch_session_entry(",
+        "@@ -199,4 +236,4 @@ async def _dispatch_session_entry("
+      ],
+      "is_test": false,
+      "path": "cognee/api/v1/remember/remember.py",
+      "removed_lines": 10,
+      "risk_tags": [
+        "api"
+      ],
+      "status": "M",
+      "symbols": [
+        "_ensure_migrations_run",
+        "RememberKwargs",
+        "_estimate_data_size",
+        "_data_to_text",
+        "_add_to_session",
+        "_remember_entry",
+        "_dispatch_session_entry",
+        "RememberResult",
+        "remember",
+        "_remember_inner",
+        "__init__",
+        "session_id",
+        "__repr__",
+        "__str__",
+        "to_dict",
+        "__bool__",
+        "__await__",
+        "_await_impl",
+        "done",
+        "_resolve",
+        "_fail",
+        "_run",
+        "_remember_background",
+        "_session_improve"
+      ]
+    },
+    {
+      "added_lines": 15,
+      "extension": ".py",
+      "hunk_headers": [
+        "@@ -10 +10 @@ from pydantic import BaseModel, Field, WithJsonSchema",
+        "@@ -105 +105,2 @@ def get_remember_router() -> APIRouter:",
+        "@@ -109 +110 @@ def get_remember_router() -> APIRouter:",
+        "@@ -113 +114,4 @@ def get_remember_router() -> APIRouter:",
+        "@@ -123,3 +127,4 @@ def get_remember_router() -> APIRouter:",
+        "@@ -150,0 +156,3 @@ def get_remember_router() -> APIRouter:"
+      ],
+      "is_test": false,
+      "path": "cognee/api/v1/remember/routers/get_remember_router.py",
+      "removed_lines": 7,
+      "risk_tags": [
+        "api"
+      ],
+      "status": "M",
+      "symbols": [
+        "get_remember_router",
+        "remember",
+        "RememberEntryRequest",
+        "remember_entry"
+      ]
+    },
+    {
+      "added_lines": 15,
+      "extension": ".py",
+      "hunk_headers": [
+        "@@ -36,0 +37,5 @@ class SearchPayloadDTO(InDTO):",
+        "@@ -146,0 +152,5 @@ def get_search_router() -> APIRouter:",
+        "@@ -166,0 +177,5 @@ def get_search_router() -> APIRouter:"
+      ],
+      "is_test": false,
+      "path": "cognee/api/v1/search/routers/get_search_router.py",
+      "removed_lines": 0,
+      "risk_tags": [
+        "api"
+      ],
+      "status": "M",
+      "symbols": [
+        "SearchPayloadDTO",
+        "get_search_router",
+        "SearchHistoryItem",
+        "get_search_history",
+        "search"
+      ]
+    },
+    {
+      "added_lines": 50,
+      "extension": ".py",
+      "hunk_headers": [
+        "@@ -4,0 +5 @@ from cognee.modules.engine.models.node_set import NodeSet",
+        "@@ -47,0 +49,5 @@ async def search(",
+        "@@ -62,0 +69,10 @@ async def search(",
+        "@@ -155,0 +172,5 @@ async def search(",
+        "@@ -204,0 +226,11 @@ async def search(",
+        "@@ -210 +242,12 @@ async def search(",
+        "@@ -251,0 +295,6 @@ async def search("
+      ],
+      "is_test": false,
+      "path": "cognee/api/v1/search/search.py",
+      "removed_lines": 1,
+      "risk_tags": [
+        "api"
+      ],
+      "status": "M",
+      "symbols": [
+        "search"
+      ]
+    },
+    {
+      "added_lines": 35,
+      "extension": ".py",
+      "hunk_headers": [
+        "@@ -97,0 +98,3 @@ class CloudClient:",
+        "@@ -99 +102 @@ class CloudClient:",
+        "@@ -101 +104 @@ class CloudClient:",
+        "@@ -103,3 +105,0 @@ class CloudClient:",
+        "@@ -114,0 +115,3 @@ class CloudClient:",
+        "@@ -242,0 +246,27 @@ class CloudClient:"
+      ],
+      "is_test": false,
+      "path": "cognee/api/v1/serve/cloud_client.py",
+      "removed_lines": 5,
+      "risk_tags": [
+        "api",
+        "cli"
+      ],
+      "status": "M",
+      "symbols": [
+        "CloudClient",
+        "__init__",
+        "_get_session",
+        "close",
+        "_health_check",
+        "remember",
+        "remember_entry",
+        "recall",
+        "improve",
+        "add",
+        "cognify",
+        "search",
+        "forget"
+      ]
+    },
+    {
+      "added_lines": 18,
+      "extension": ".py",
+      "hunk_headers": [
+        "@@ -77,0 +78,12 @@ class DataPoint(BaseModel):",
+        "@@ -86,2 +98,3 @@ class DataPoint(BaseModel):",
+        "@@ -91,2 +104,3 @@ class DataPoint(BaseModel):"
+      ],
+      "is_test": false,
+      "path": "cognee/infrastructure/engine/models/DataPoint.py",
+      "removed_lines": 4,
+      "risk_tags": [
+        "migration"
+      ],
+      "status": "M",
+      "symbols": [
+        "MetaData",
+        "DataPoint",
+        "__init__",
+        "_get_metadata_default",
+        "_get_identity_fields",
+        "_generate_identity_id",
+        "__pydantic_init_subclass__",
+        "get_embeddable_data",
+        "get_embeddable_properties",
+        "get_embeddable_property_names",
+        "update_version",
+        "to_json",
+        "from_json",
+        "to_dict",
+        "from_dict"
+      ]
+    },
+    {
+      "added_lines": 13,
+      "extension": ".txt",
+      "hunk_headers": [
+        "@@ -0,0 +1,13 @@"
+      ],
+      "is_test": false,
+      "path": "cognee/infrastructure/llm/prompts/agentic_system.txt",
+      "removed_lines": 0,
+      "risk_tags": [],
+      "status": "A",
+      "symbols": []
+    },
+    {
+      "added_lines": 9,
+      "extension": ".txt",
+      "hunk_headers": [
+        "@@ -0,0 +1,9 @@"
+      ],
+      "is_test": false,
+      "path": "cognee/infrastructure/llm/prompts/agentic_user.txt",
+      "removed_lines": 0,
+      "risk_tags": [],
+      "status": "A",
+      "symbols": []
+    },
+    {
+      "added_lines": 2,
+      "extension": ".py",
+      "hunk_headers": [
+        "@@ -5,0 +6 @@ from .entries import (",
+        "@@ -14,0 +16 @@ __all__ = ["
+      ],
+      "is_test": false,
+      "path": "cognee/memory/__init__.py",
+      "removed_lines": 0,
+      "risk_tags": [],
+      "status": "M",
+      "symbols": []
+    },
+    {
+      "added_lines": 53,
+      "extension": ".py",
+      "hunk_headers": [
+        "@@ -5 +5,2 @@ Typed payloads let callers pass rich structured data to",
+        "@@ -13,0 +15 @@ from typing import Any, Literal, Optional, Union",
+        "@@ -15 +17 @@ from typing import Any, Literal, Optional, Union",
+        "@@ -67 +69,48 @@ class FeedbackEntry(BaseModel):",
+        "@@ -72 +121 @@ MemoryEntry = Union[QAEntry, TraceEntry, FeedbackEntry]"
+      ],
+      "is_test": false,
+      "path": "cognee/memory/entries.py",
+      "removed_lines": 4,
+      "risk_tags": [],
+      "status": "M",
+      "symbols": [
+        "QAEntry",
+        "TraceEntry",
+        "FeedbackEntry",
+        "SkillRunEntry",
+        "normalize_scope",
+        "_validate_success_score",
+        "_validate_feedback",
+        "_validate_non_negative_ms"
+      ]
+    },
+    {
+      "added_lines": 105,
+      "extension": ".py",
+      "hunk_headers": [
+        "@@ -0,0 +1,105 @@"
+      ],
+      "is_test": false,
+      "path": "cognee/modules/engine/models/Skill.py",
+      "removed_lines": 0,
+      "risk_tags": [
+        "migration"
+      ],
+      "status": "A",
+      "symbols": [
+        "SkillResource",
+        "TaskPattern",
+        "Skill"
+      ]
+    },
+    {
+      "added_lines": 38,
+      "extension": ".py",
+      "hunk_headers": [
+        "@@ -0,0 +1,38 @@"
+      ],
+      "is_test": false,
+      "path": "cognee/modules/engine/models/SkillAmendment.py",
+      "removed_lines": 0,
+      "risk_tags": [
+        "migration"
+      ],
+      "status": "A",
+      "symbols": [
+        "AmendmentProposal",
+        "SkillAmendment"
+      ]
+    },
+    {
+      "added_lines": 20,
+      "extension": ".py",
+      "hunk_headers": [
+        "@@ -0,0 +1,20 @@"
+      ],
+      "is_test": false,
+      "path": "cognee/modules/engine/models/SkillChangeEvent.py",
+      "removed_lines": 0,
+      "risk_tags": [
+        "migration"
+      ],
+      "status": "A",
+      "symbols": [
+        "SkillChangeEvent"
+      ]
+    },
+    {
+      "added_lines": 47,
+      "extension": ".py",
+      "hunk_headers": [
+        "@@ -0,0 +1,47 @@"
+      ],
+      "is_test": false,
+      "path": "cognee/modules/engine/models/SkillInspection.py",
+      "removed_lines": 0,
+      "risk_tags": [
+        "migration"
+      ],
+      "status": "A",
+      "symbols": [
+        "InspectionResult",
+        "SkillInspection"
+      ]
+    },
+    {
+      "added_lines": 68,
+      "extension": ".py",
+      "hunk_headers": [
+        "@@ -0,0 +1,68 @@"
+      ],
+      "is_test": false,
+      "path": "cognee/modules/engine/models/SkillRun.py",
+      "removed_lines": 0,
+      "risk_tags": [
+        "migration"
+      ],
+      "status": "A",
+      "symbols": [
+        "ToolCall",
+        "CandidateSkill",
+        "SkillRun"
+      ]
+    },
+    {
+      "added_lines": 36,
+      "extension": ".py",
+      "hunk_headers": [
+        "@@ -0,0 +1,36 @@"
+      ],
+      "is_test": false,
+      "path": "cognee/modules/engine/models/Tool.py",
+      "removed_lines": 0,
+      "risk_tags": [
+        "migration"
+      ],
+      "status": "A",
+      "symbols": [
+        "Tool"
+      ]
+    },
+    {
+      "added_lines": 6,
+      "extension": ".py",
+      "hunk_headers": [
+        "@@ -10,0 +11,6 @@ from .Triplet import Triplet"
+      ],
+      "is_test": false,
+      "path": "cognee/modules/engine/models/__init__.py",
+      "removed_lines": 0,
+      "risk_tags": [
+        "migration"
+      ],
+      "status": "M",
+      "symbols": []
+    },
+    {
+      "added_lines": 3,
+      "extension": ".py",
+      "hunk_headers": [
+        "@@ -28,0 +29,3 @@ async def upsert_edges("
+      ],
+      "is_test": false,
+      "path": "cognee/modules/graph/methods/upsert_edges.py",
+      "removed_lines": 0,
+      "risk_tags": [
+        "storage"
+      ],
+      "status": "M",
+      "symbols": [
+        "upsert_edges"
+      ]
+    },
+    {
+      "added_lines": 396,
+      "extension": ".py",
+      "hunk_headers": [
+        "@@ -0,0 +1,396 @@"
+      ],
+      "is_test": false,
+      "path": "cognee/modules/memify/skill_amendify.py",
+      "removed_lines": 0,
+      "risk_tags": [],
+      "status": "A",
+      "symbols": [
+        "_tag_with_nodeset",
+        "_content_hash",
+        "_replace_skill_md_body",
+        "_load_amendment_from_graph",
+        "_load_skill_from_graph",
+        "_reconstruct_amendment",
+        "amendify",
+        "rollback_amendify",
+        "evaluate_amendify"
+      ]
+    },
+    {
+      "added_lines": 127,
+      "extension": ".py",
+      "hunk_headers": [
+        "@@ -0,0 +1,127 @@"
+      ],
+      "is_test": false,
+      "path": "cognee/modules/memify/skill_improvement.py",
+      "removed_lines": 0,
+      "risk_tags": [],
+      "status": "A",
+      "symbols": [
+        "_list_skill_names",
+        "_load_skill_dict",
+        "improve_failing_skills"
+      ]
+    },
+    {
+      "added_lines": 185,
+      "extension": ".py",
+      "hunk_headers": [
+        "@@ -0,0 +1,185 @@"
+      ],
+      "is_test": false,
+      "path": "cognee/modules/memify/skill_inspect.py",
+      "removed_lines": 0,
+      "risk_tags": [],
+      "status": "A",
+      "symbols": [
+        "_format_run",
+        "inspect_skill"
+      ]
+    },
+    {
+      "added_lines": 121,
+      "extension": ".py",
+      "hunk_headers": [
+        "@@ -0,0 +1,121 @@"
+      ],
+      "is_test": false,
+      "path": "cognee/modules/memify/skill_preview_amendify.py",
+      "removed_lines": 0,
+      "risk_tags": [],
+      "status": "A",
+      "symbols": [
+        "preview_skill_amendify"
+      ]
+    },
+    {
+      "added_lines": 451,
+      "extension": ".py",
+      "hunk_headers": [
+        "@@ -0,0 +1,451 @@"
+      ],
+      "is_test": false,
+      "path": "cognee/modules/retrieval/agentic_retriever.py",
+      "removed_lines": 0,
+      "risk_tags": [],
+      "status": "A",
+      "symbols": [
+        "ToolCall",
+        "AgentStep",
+        "AgenticRetriever",
+        "_format_skill_catalog",
+        "_format_tool_manifest",
+        "__init__",
+        "_use_session_cache",
+        "get_retrieved_objects",
+        "_resolve_active_tools",
+        "get_context_from_objects",
+        "get_completion_from_context",
+        "_record_skill_runs",
+        "_get_session_history",
+        "_store_session_qa",
+        "_run_tool_loop",
+        "_run_tool_safely"
+      ]
+    },
+    {
+      "added_lines": 56,
+      "extension": ".py",
+      "hunk_headers": [
+        "@@ -31,0 +32,2 @@ from cognee.modules.retrieval.natural_language_retriever import NaturalLanguageR",
+        "@@ -257,0 +260,54 @@ async def get_search_type_retriever_instance("
+      ],
+      "is_test": false,
+      "path": "cognee/modules/search/methods/get_search_type_retriever_instance.py",
+      "removed_lines": 0,
+      "risk_tags": [],
+      "status": "M",
+      "symbols": [
+        "get_search_type_retriever_instance"
+      ]
+    },
+    {
+      "added_lines": 6,
+      "extension": ".py",
+      "hunk_headers": [
+        "@@ -176,0 +177 @@ async def authorized_search(",
+        "@@ -199,0 +201 @@ async def search_in_datasets_context(",
+        "@@ -268,0 +271 @@ async def search_in_datasets_context(",
+        "@@ -313,0 +317 @@ async def search_in_datasets_context(",
+        "@@ -318 +322,2 @@ async def search_in_datasets_context("
+      ],
+      "is_test": false,
+      "path": "cognee/modules/search/methods/search.py",
+      "removed_lines": 1,
+      "risk_tags": [],
+      "status": "M",
+      "symbols": [
+        "search",
+        "authorized_search",
+        "search_in_datasets_context",
+        "_backwards_compatible_search_results",
+        "_search_in_dataset_context"
+      ]
+    },
+    {
+      "added_lines": 1,
+      "extension": ".py",
+      "hunk_headers": [
+        "@@ -19,0 +20 @@ class SearchType(str, Enum):"
+      ],
+      "is_test": false,
+      "path": "cognee/modules/search/types/SearchType.py",
+      "removed_lines": 0,
+      "risk_tags": [],
+      "status": "M",
+      "symbols": [
+        "SearchType"
+      ]
+    },
+    {
+      "added_lines": 9,
+      "extension": ".py",
+      "hunk_headers": [
+        "@@ -29,0 +30,8 @@ def copy_model(",
+        "@@ -31 +39 @@ def copy_model("
+      ],
+      "is_test": false,
+      "path": "cognee/modules/storage/utils/__init__.py",
+      "removed_lines": 1,
+      "risk_tags": [
+        "storage"
+      ],
+      "status": "M",
+      "symbols": [
+        "JSONEncoder",
+        "copy_model",
+        "get_own_properties",
+        "default",
+        "_copy_default",
+        "ConfiguredBase"
+      ]
+    },
+    {
+      "added_lines": 21,
+      "extension": ".py",
+      "hunk_headers": [
+        "@@ -0,0 +1,21 @@"
+      ],
+      "is_test": false,
+      "path": "cognee/modules/tools/__init__.py",
+      "removed_lines": 0,
+      "risk_tags": [],
+      "status": "A",
+      "symbols": []
+    },
+    {
+      "added_lines": 7,
+      "extension": ".py",
+      "hunk_headers": [
+        "@@ -0,0 +1,7 @@"
+      ],
+      "is_test": false,
+      "path": "cognee/modules/tools/builtin/__init__.py",
+      "removed_lines": 0,
+      "risk_tags": [],
+      "status": "A",
+      "symbols": []
+    },
+    {
+      "added_lines": 55,
+      "extension": ".py",
+      "hunk_headers": [
+        "@@ -0,0 +1,55 @@"
+      ],
+      "is_test": false,
+      "path": "cognee/modules/tools/builtin/load_skill.py",
+      "removed_lines": 0,
+      "risk_tags": [],
+      "status": "A",
+      "symbols": [
+        "handler"
+      ]
+    },
+    {
+      "added_lines": 57,
+      "extension": ".py",
+      "hunk_headers": [
+        "@@ -0,0 +1,57 @@"
+      ],
+      "is_test": false,
+      "path": "cognee/modules/tools/builtin/memory_search.py",
+      "removed_lines": 0,
+      "risk_tags": [],
+      "status": "A",
+      "symbols": [
+        "handler"
+      ]
+    },
+    {
+      "added_lines": 21,
+      "extension": ".py",
+      "hunk_headers": [
+        "@@ -0,0 +1,21 @@"
+      ],
+      "is_test": false,
+      "path": "cognee/modules/tools/context.py",
+      "removed_lines": 0,
+      "risk_tags": [],
+      "status": "A",
+      "symbols": []
+    },
+    {
+      "added_lines": 21,
+      "extension": ".py",
+      "hunk_headers": [
+        "@@ -0,0 +1,21 @@"
+      ],
+      "is_test": false,
+      "path": "cognee/modules/tools/errors.py",
+      "removed_lines": 0,
+      "risk_tags": [],
+      "status": "A",
+      "symbols": [
+        "ToolError",
+        "ToolNotFoundError",
+        "ToolPermissionError",
+        "ToolScopeError",
+        "ToolInvocationError"
+      ]
+    },
+    {
+      "added_lines": 88,
+      "extension": ".py",
+      "hunk_headers": [
+        "@@ -0,0 +1,88 @@"
+      ],
+      "is_test": false,
+      "path": "cognee/modules/tools/execute_tool.py",
+      "removed_lines": 0,
+      "risk_tags": [],
+      "status": "A",
+      "symbols": [
+        "execute_tool"
+      ]
+    },
+    {
+      "added_lines": 276,
+      "extension": ".py",
+      "hunk_headers": [
+        "@@ -0,0 +1,276 @@"
+      ],
+      "is_test": false,
+      "path": "cognee/modules/tools/ingest_skills.py",
+      "removed_lines": 0,
+      "risk_tags": [],
+      "status": "A",
+      "symbols": [
+        "_is_skill_entry",
+        "looks_like_skill_source",
+        "_scope_matches",
+        "_skill_source_data_id",
+        "_make_storage_context",
+        "_diff_against_graph",
+        "_delete_stale",
+        "add_skills"
+      ]
+    },
+    {
+      "added_lines": 157,
+      "extension": ".py",
+      "hunk_headers": [
+        "@@ -0,0 +1,157 @@"
+      ],
+      "is_test": false,
+      "path": "cognee/modules/tools/registry.py",
+      "removed_lines": 0,
+      "risk_tags": [],
+      "status": "A",
+      "symbols": [
+        "register_builtin_tool",
+        "resolve_handler",
+        "get_tool",
+        "list_tools_for_dataset",
+        "_find_tool_in_graph",
+        "_list_tools_in_graph",
+        "_query_tool_nodes",
+        "_coerce_tool"
+      ]
+    },
+    {
+      "added_lines": 190,
+      "extension": ".py",
+      "hunk_headers": [
+        "@@ -0,0 +1,190 @@"
+      ],
+      "is_test": false,
+      "path": "cognee/modules/tools/resolve_skills.py",
+      "removed_lines": 0,
+      "risk_tags": [],
+      "status": "A",
+      "symbols": [
+        "_skill_in_dataset_scope",
+        "resolve_skills",
+        "_auto_retrieve_skills",
+        "_find_skill_by_id",
+        "_find_skill_by_name",
+        "_coerce_skill"
+      ]
+    },
+    {
+      "added_lines": 51,
+      "extension": ".py",
+      "hunk_headers": [
+        "@@ -0,0 +1,51 @@"
+      ],
+      "is_test": false,
+      "path": "cognee/modules/tools/skill_change_events.py",
+      "removed_lines": 0,
+      "risk_tags": [],
+      "status": "A",
+      "symbols": [
+        "_now_timestamp",
+        "_make_change_event"
+      ]
+    },
+    {
+      "added_lines": 118,
+      "extension": ".py",
+      "hunk_headers": [
+        "@@ -0,0 +1,118 @@"
+      ],
+      "is_test": false,
+      "path": "cognee/modules/tools/skill_enrichment_tasks.py",
+      "removed_lines": 0,
+      "risk_tags": [
+        "async"
+      ],
+      "status": "A",
+      "symbols": [
+        "SkillEnrichment",
+        "_enrich_one",
+        "enrich_skills"
+      ]
+    },
+    {
+      "added_lines": 37,
+      "extension": ".py",
+      "hunk_headers": [
+        "@@ -0,0 +1,37 @@"
+      ],
+      "is_test": false,
+      "path": "cognee/modules/tools/skill_node_set_task.py",
+      "removed_lines": 0,
+      "risk_tags": [
+        "async"
+      ],
+      "status": "A",
+      "symbols": [
+        "_tag",
+        "apply_node_set"
+      ]
+    },
+    {
+      "added_lines": 512,
+      "extension": ".py",
+      "hunk_headers": [
+        "@@ -0,0 +1,512 @@"
+      ],
+      "is_test": false,
+      "path": "cognee/modules/tools/skill_parser.py",
+      "removed_lines": 0,
+      "risk_tags": [],
+      "status": "A",
+      "symbols": [
+        "_deterministic_id",
+        "_content_hash",
+        "_is_binary",
+        "_is_relative_to",
+        "_read_text_safe",
+        "_classify_resource",
+        "_parse_frontmatter",
+        "_pop_first",
+        "_extract_name",
+        "_extract_description",
+        "_extract_tags",
+        "_extract_triggers",
+        "_extract_tools",
+        "_detect_complexity",
+        "_find_skill_file",
+        "_scan_resources",
+        "parse_skill_file",
+        "parse_skill_folder",
+        "parse_skills_folder"
+      ]
+    },
+    {
+      "added_lines": 156,
+      "extension": ".py",
+      "hunk_headers": [
+        "@@ -0,0 +1,156 @@"
+      ],
+      "is_test": false,
+      "path": "cognee/modules/tools/skill_pattern_tasks.py",
+      "removed_lines": 0,
+      "risk_tags": [
+        "async"
+      ],
+      "status": "A",
+      "symbols": [
+        "TaskPatternEnrichment",
+        "_make_pattern_id",
+        "_enrich_one_pattern",
+        "materialize_task_patterns"
+      ]
+    },
+    {
+      "added_lines": 120,
+      "extension": ".py",
+      "hunk_headers": [
+        "@@ -0,0 +1,120 @@"
+      ],
+      "is_test": false,
+      "path": "cognee/modules/tools/skill_runs.py",
+      "removed_lines": 0,
+      "risk_tags": [],
+      "status": "A",
+      "symbols": [
+        "_skill_run_data_id",
+        "_make_storage_context",
+        "_coerce_tool_trace",
+        "remember_skill_run_entry"
+      ]
+    },
+    {
+      "added_lines": 0,
+      "extension": ".py",
+      "hunk_headers": [],
+      "is_test": true,
+      "path": "cognee/tests/unit/modules/tools/__init__.py",
+      "removed_lines": 0,
+      "risk_tags": [
+        "test"
+      ],
+      "status": "A",
+      "symbols": []
+    },
+    {
+      "added_lines": 589,
+      "extension": ".py",
+      "hunk_headers": [
+        "@@ -0,0 +1,589 @@"
+      ],
+      "is_test": true,
+      "path": "cognee/tests/unit/modules/tools/test_skill_ingest.py",
+      "removed_lines": 0,
+      "risk_tags": [
+        "test"
+      ],
+      "status": "A",
+      "symbols": [
+        "_make_skills_dir",
+        "TestSkillIngest",
+        "_run",
+        "test_remember_detects_skill_source",
+        "test_remember_detects_mixed_case_skill_source",
+        "test_add_skills_persists_canonical_skill",
+        "test_add_skills_scopes_persisted_skill_to_dataset",
+        "test_re_ingest_is_idempotent_when_content_unchanged",
+        "test_edit_triggers_updated_change_event",
+        "test_top_level_skills_attr_is_gone",
+        "test_agentic_completion_still_present",
+        "test_memify_improvement_task_importable",
+        "test_agentic_skill_runs_use_neutral_success_score",
+        "test_load_skill_records_open_in_opened_skills_var",
+        "test_load_skill_works_when_opened_skills_var_unset",
+        "test_record_skill_runs_persists_tool_trace",
+        "test_record_skill_runs_defaults_tool_trace_empty",
+        "test_skill_run_entry_validates_score_ranges",
+        "test_copy_model_preserves_factory_metadata_defaults",
+        "test_upsert_edges_skips_empty_edge_batches",
+        "test_remember_skill_run_entry_persists_with_dataset_context",
+        "test_resolve_skills_skips_explicit_skill_outside_dataset_scope",
+        "test_graph_tools_are_hidden_without_matching_dataset_scope",
+        "test_memory_search_rejects_non_positive_top_k",
+        "_run",
+        "_run",
+        "_run",
+        "_run",
+        "_run",
+        "_run",
+        "_run",
+        "_run",
+        "_run",
+        "_run",
+        "_run",
+        "diff_side_effect",
+        "diff_side_effect"
+      ]
+    },
+    {
+      "added_lines": 62,
+      "extension": "",
+      "hunk_headers": [
+        "@@ -0,0 +1,62 @@"
+      ],
+      "is_test": false,
+      "path": "distributed/deploy/Dockerfile",
+      "removed_lines": 0,
+      "risk_tags": [
+        "storage"
+      ],
+      "status": "A",
+      "symbols": []
+    },
+    {
+      "added_lines": 38,
+      "extension": ".md",
+      "hunk_headers": [
+        "@@ -129 +129 @@ daytona create",
+        "@@ -132,0 +133,37 @@ python -m uvicorn cognee.api.client:app --host 0.0.0.0 --port 8000"
+      ],
+      "is_test": false,
+      "path": "distributed/deploy/README.md",
+      "removed_lines": 1,
+      "risk_tags": [],
+      "status": "M",
+      "symbols": []
+    },
+    {
+      "added_lines": 1003,
+      "extension": ".py",
+      "hunk_headers": [
+        "@@ -0,0 +1,1003 @@"
+      ],
+      "is_test": false,
+      "path": "distributed/deploy/daytona_onboarding_demo.py",
+      "removed_lines": 0,
+      "risk_tags": [],
+      "status": "A",
+      "symbols": [
+        "_get_daytona",
+        "_run_streamed",
+        "_print_tail",
+        "_write_sandbox_file",
+        "_upload_local_skill_pack",
+        "install_skill_pack",
+        "install_cognee_cli_dataset_wrapper",
+        "_create_with_quota_retry",
+        "ensure_shared_volume",
+        "deploy_claude_code_agent",
+        "run_agent_task",
+        "inspect_shared_graph",
+        "main",
+        "_stream"
+      ]
+    },
+    {
+      "added_lines": 1,
+      "extension": ".py",
+      "hunk_headers": [
+        "@@ -92 +92 @@ def deploy_cognee():"
+      ],
+      "is_test": false,
+      "path": "distributed/deploy/daytona_sandbox.py",
+      "removed_lines": 1,
+      "risk_tags": [
+        "storage"
+      ],
+      "status": "M",
+      "symbols": [
+        "_run_streamed",
+        "deploy_cognee",
+        "_stream"
+      ]
+    },
+    {
+      "added_lines": 1,
+      "extension": ".py",
+      "hunk_headers": [
+        "@@ -33 +33 @@ image = ("
+      ],
+      "is_test": false,
+      "path": "distributed/deploy/modal_app.py",
+      "removed_lines": 1,
+      "risk_tags": [],
+      "status": "M",
+      "symbols": [
+        "serve"
+      ]
+    },
+    {
+      "added_lines": 40,
+      "extension": ".md",
+      "hunk_headers": [
+        "@@ -0,0 +1,40 @@"
+      ],
+      "is_test": false,
+      "path": "examples/skills/README.md",
+      "removed_lines": 0,
+      "risk_tags": [],
+      "status": "A",
+      "symbols": []
+    },
+    {
+      "added_lines": 39,
+      "extension": ".md",
+      "hunk_headers": [
+        "@@ -0,0 +1,39 @@"
+      ],
+      "is_test": false,
+      "path": "examples/skills/code-review/SKILL.md",
+      "removed_lines": 0,
+      "risk_tags": [],
+      "status": "A",
+      "symbols": []
+    },
+    {
+      "added_lines": 1,
+      "extension": ".toml",
+      "hunk_headers": [
+        "@@ -4 +4 @@ name = \"cognee\""
+      ],
+      "is_test": false,
+      "path": "pyproject.toml",
+      "removed_lines": 1,
+      "risk_tags": [],
+      "status": "M",
+      "symbols": []
+    },
+    {
+      "added_lines": 1,
+      "extension": ".lock",
+      "hunk_headers": [
+        "@@ -1044 +1044 @@ name = \"cognee\""
+      ],
+      "is_test": false,
+      "path": "uv.lock",
+      "removed_lines": 1,
+      "risk_tags": [],
+      "status": "M",
+      "symbols": []
+    }
+  ],
+  "head_ref": "pr-sentinel-pr-2705",
+  "merge_base": "c32b15371db09ea85b73f62226fa36c9a5eb346e",
+  "notes": [],
+  "repo": "/private/tmp/cognee-pr-2705",
+  "risk_summary": {
+    "api": [
+      "cognee/api/v1/remember/remember.py",
+      "cognee/api/v1/remember/routers/get_remember_router.py",
+      "cognee/api/v1/search/routers/get_search_router.py",
+      "cognee/api/v1/search/search.py",
+      "cognee/api/v1/serve/cloud_client.py"
+    ],
+    "async": [
+      "cognee/modules/tools/skill_enrichment_tasks.py",
+      "cognee/modules/tools/skill_node_set_task.py",
+      "cognee/modules/tools/skill_pattern_tasks.py"
+    ],
+    "cli": [
+      "cognee/api/v1/serve/cloud_client.py"
+    ],
+    "migration": [
+      "cognee/infrastructure/engine/models/DataPoint.py",
+      "cognee/modules/engine/models/Skill.py",
+      "cognee/modules/engine/models/SkillAmendment.py",
+      "cognee/modules/engine/models/SkillChangeEvent.py",
+      "cognee/modules/engine/models/SkillInspection.py",
+      "cognee/modules/engine/models/SkillRun.py",
+      "cognee/modules/engine/models/Tool.py",
+      "cognee/modules/engine/models/__init__.py"
+    ],
+    "storage": [
+      "cognee/modules/graph/methods/upsert_edges.py",
+      "cognee/modules/storage/utils/__init__.py",
+      "distributed/deploy/Dockerfile",
+      "distributed/deploy/daytona_sandbox.py"
+    ],
+    "test": [
+      "cognee/tests/unit/modules/tools/__init__.py",
+      "cognee/tests/unit/modules/tools/test_skill_ingest.py"
+    ]
+  },
+  "suggested_commands": [
+    "python -m pytest"
+  ],
+  "test_candidates": [
+    ".github/workflows/backend_docker_build_test.yml",
+    ".github/workflows/basic_tests.yml",
+    ".github/workflows/cli_tests.yml",
+    ".github/workflows/community_tests.yml",
+    ".github/workflows/db_examples_tests.yml",
+    ".github/workflows/distributed_test.yml",
+    ".github/workflows/e2e_tests.yml",
+    ".github/workflows/examples_tests.yml",
+    ".github/workflows/graph_db_tests.yml",
+    ".github/workflows/integration_tests.yml",
+    ".github/workflows/load_tests.yml",
+    ".github/workflows/notebooks_tests.yml"
+  ]
+}
