@@ -1,0 +1,54 @@
+{
+  "run_id": "team:final-hidden:pr-sentinel",
+  "selected_skill_id": "pr-sentinel",
+  "task_text": "Review and rescue the final hidden PR with the frozen PR Sentinel skill.",
+  "result_summary": "Final hidden PR execution was blocked because no hidden PR URL, refs, patch file, or checkout instructions were available in the repo or task context.",
+  "success_score": 0.0,
+  "feedback": -0.2,
+  "error_type": "agent_failed",
+  "error_message": "The final hidden PR target was unavailable, so no final PR diff, review finding, verification command, Cognee write, Moss retrieval, or Daytona workspace evidence could be produced.",
+  "last_attempt_at": "2026-04-25T23:17:55Z",
+  "scorecard": {
+    "pr_rescue_quality": 0,
+    "self_improvement_evidence": 21,
+    "review_clarity": 8,
+    "reproducibility": 8,
+    "safety": 5,
+    "total": 42
+  },
+  "frozen_skill": {
+    "path": "skills/pr-sentinel/SKILL.md",
+    "sha256": "e8224dee9b9942a50461aa311c9632b35456bef9666be73f16697b23ca6f0b97",
+    "frozen_at": "2026-04-25T23:17:19Z",
+    "edited_during_final_round": false
+  },
+  "baseline_improved_context": {
+    "baseline_run_id": "team:practice-config-env:pr-sentinel",
+    "baseline_score": 38,
+    "improved_run_id": "team:practice-vector-filter:pr-sentinel",
+    "improved_score": 82,
+    "improvement": 44
+  },
+  "moss": {
+    "collection": "pr-sentinel-failures",
+    "retrieved_memory_ids": [],
+    "stored_memory_ids": [],
+    "status": "not observed for final hidden round because no hidden PR run was possible"
+  },
+  "cognee": {
+    "skill_run_entry_write_observed": false,
+    "status": "SkillRunEntry fields recorded locally only"
+  },
+  "runtime": {
+    "type": "docker validation of frozen artifacts",
+    "image": "ghcr.io/topoteretes/cognee/cognee-skills-hackathon:144a128515cc",
+    "platform": "linux/amd64",
+    "log": "supporting raw log trimmed for final submission clarity",
+    "status": "Docker validated Python version, frozen skill hash, and final scorecard JSON"
+  },
+  "daytona": {
+    "workspace": "not observed",
+    "cleanup_observed": false,
+    "status": "no Daytona workspace was created because the hidden PR target was unavailable"
+  }
+}

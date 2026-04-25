@@ -1,0 +1,31 @@
+{
+  "run_id": "team:practice-config-env:pr-sentinel",
+  "selected_skill_id": "pr-sentinel",
+  "task_text": "Review and rescue https://github.com/topoteretes/cognee/pull/2701",
+  "result_summary": "Approved an env-bound graph config change with only py_compile validation and missed the missing behavior test.",
+  "success_score": 0.33,
+  "feedback": -0.34,
+  "error_type": "weak_evidence",
+  "error_message": "Baseline did not require a config behavior test for GRAPH_DATASET_TO_DATABASE_HANDLER binding or default behavior.",
+  "last_attempt_at": "2026-04-25T23:03:04Z",
+  "scorecard": {
+    "pr_rescue_quality": 12,
+    "self_improvement_evidence": 8,
+    "review_clarity": 6,
+    "reproducibility": 7,
+    "safety": 5,
+    "total": 38
+  },
+  "moss": {
+    "collection": "pr-sentinel-failures",
+    "retrieved_memory_ids": [],
+    "stored_memory_ids": [],
+    "status": "not observed for local fallback baseline"
+  },
+  "daytona": {
+    "workspace": "not used for local fallback baseline",
+    "verification_command": "python3 -m json.tool evidence/runs/hour-4-pr-2701-baseline.scorecard.json >/dev/null",
+    "cleanup_observed": false,
+    "status": "canonical scorecard retained; supporting local probe artifacts were trimmed for final submission clarity"
+  }
+}
